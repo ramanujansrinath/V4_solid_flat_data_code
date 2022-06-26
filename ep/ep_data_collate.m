@@ -6,7 +6,7 @@
 
 clear; clc;
 
-projPath = '/Volumes/Supportboy/cold/Hopkins/NHP/prod/EP/projectMaskedGA3D';
+projPath = '/Volumes/Supportboy/cold/Hopkins/monkey/prod/EP/projectMaskedGA3D';
 load([projPath '/analysis/plots/population/ids.mat'],'population');
 splits = 1:10:length(population);
 
@@ -23,6 +23,9 @@ for jj=1:length(splits)-1
                 shapeResp(sCount).col = stimuli{ss}.shape.color;
                 shapeResp(sCount).tex = stimuli{ss}.shape.texture;
                 shapeResp(sCount).spec = stimuli{ss}.shape.mstickspec;
+                shapeResp(sCount).x = stimuli{ss}.shape.x;
+                shapeResp(sCount).y = stimuli{ss}.shape.y;
+                shapeResp(sCount).s = stimuli{ss}.shape.s;
                 shapeResp(sCount).resp = mean(stimuli{ss}.id.respMatrix);
                 sCount = sCount+1;
             end
